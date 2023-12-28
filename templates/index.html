@@ -2,15 +2,79 @@
 <html>
 <head>
     <title>MNIST Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .model-selection {
+            margin: 10px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="file"]:hover {
+            border-color: #2980b9;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" required>
+        <div class="model-selection">
+            <input type="radio" id="modelMLG" name="model" value="MLG" checked>
+            <label for="modelMLG">Modelo MLG</label><br>
+            <input type="radio" id="modeltSFL1" name="model" value="tSFL1">
+            <label for="modeltSFL1">Modelo tSFL1</label><br>
+            <input type="radio" id="modeltSFL2" name="model" value="tSFL2">
+            <label for="modeltSFL2">Modelo tSFL2</label>
+        </div>
+        <input type="file" name="image" accept=".png, .jpg, .jpeg" required>
         <input type="submit" value="Predict">
     </form>
 
     {% if prediction != None %}
         <h2>Prediction: {{ prediction }}</h2>
     {% endif %}
+
+    <script>
+        // JavaScript puede ser agregado aquí para funcionalidades adicionales
+    </script>
 </body>
 </html>
