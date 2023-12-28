@@ -1,7 +1,2 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-.vscode/
-__pycache__/
-clf_entrenado_MLG.pkl/
-clf_entrenado_tSFL1.h5/
-clf_entrenado_tSFL2.h5/
